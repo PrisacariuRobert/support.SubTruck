@@ -1,46 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Support & FAQ</title>
-    <link rel="stylesheet" href="styles.css">
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.0/dist/cdn.min.js"></script>
 </head>
-<body>
-    <div class="support-container">
-        <header class="support-header">
-            <h1>Support & FAQ</h1>
+
+<body class="font-sans antialiased bg-gradient-to-r from-blue-500 to-blue-300 min-h-screen flex items-center justify-center">
+    <div class="w-full max-w-4xl p-6 bg-white shadow-lg rounded-lg">
+        <header class="mb-8 text-center">
+            <h1 class="text-4xl font-bold text-gray-800">Support & FAQ</h1>
+            <p class="text-gray-600">Find answers to your questions or reach out to us!</p>
         </header>
-        <main class="faq-container">
-            <div class="faq-item">
-                <button class="faq-question">
+
+        <!-- FAQ Section -->
+        <section>
+            <div class="faq-item border-b border-gray-200 py-4" x-data="{ open: false }">
+                <button class="w-full flex justify-between items-center text-left text-lg font-medium text-gray-800 hover:text-blue-600"
+                        @click="open = !open">
                     How do I add a subscription?
-                    <span class="faq-toggle">+</span>
+                    <span class="text-2xl transform transition-transform duration-300"
+                          :class="{ 'rotate-180': open }">+</span>
                 </button>
-                <div class="faq-answer">
-                    Tap the '+' button on the home screen and fill out the details.
+                <div class="text-gray-600 mt-3 pl-4" x-show="open" x-transition>
+                    Tap the "+" button on the home screen and fill out the details.
                 </div>
             </div>
-            <div class="faq-item">
-                <button class="faq-question">
+
+            <div class="faq-item border-b border-gray-200 py-4" x-data="{ open: false }">
+                <button class="w-full flex justify-between items-center text-left text-lg font-medium text-gray-800 hover:text-blue-600"
+                        @click="open = !open">
                     How do I delete a subscription?
-                    <span class="faq-toggle">+</span>
+                    <span class="text-2xl transform transition-transform duration-300"
+                          :class="{ 'rotate-180': open }">+</span>
                 </button>
-                <div class="faq-answer">
-                    Swipe left on a subscription card, then tap 'Delete'.
+                <div class="text-gray-600 mt-3 pl-4" x-show="open" x-transition>
+                    Swipe left on a subscription card, then tap "Delete".
                 </div>
             </div>
-            <div class="faq-item">
-                <button class="faq-question">
+
+            <div class="faq-item border-b border-gray-200 py-4" x-data="{ open: false }">
+                <button class="w-full flex justify-between items-center text-left text-lg font-medium text-gray-800 hover:text-blue-600"
+                        @click="open = !open">
                     How do I join a team?
-                    <span class="faq-toggle">+</span>
+                    <span class="text-2xl transform transition-transform duration-300"
+                          :class="{ 'rotate-180': open }">+</span>
                 </button>
-                <div class="faq-answer">
-                    Navigate to the 'Teams' tab, and tap 'Join' to enter an invite link.
+                <div class="text-gray-600 mt-3 pl-4" x-show="open" x-transition>
+                    Navigate to the "Teams" tab, and tap "Join" to enter an invite link.
                 </div>
             </div>
-        </main>
+
+            <div class="faq-item border-b border-gray-200 py-4" x-data="{ open: false }">
+                <button class="w-full flex justify-between items-center text-left text-lg font-medium text-gray-800 hover:text-blue-600"
+                        @click="open = !open">
+                    How do I manage notifications?
+                    <span class="text-2xl transform transition-transform duration-300"
+                          :class="{ 'rotate-180': open }">+</span>
+                </button>
+                <div class="text-gray-600 mt-3 pl-4" x-show="open" x-transition>
+                    Go to "Profile" and adjust your notification preferences.
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <footer class="mt-10 text-center">
+            <h2 class="text-xl font-semibold text-gray-800">Still have questions?</h2>
+            <p class="text-gray-600">Contact us anytime at <a href="mailto:support@subtruck.com" class="text-blue-600 underline">support@subtruck.com</a>.</p>
+        </footer>
     </div>
-    <script src="script.js"></script>
 </body>
+
 </html>
